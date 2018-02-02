@@ -13,49 +13,73 @@ public class MainActivity extends AppCompatActivity {
 
     int score = 0;
     String userName;
+    String isAmazon;
+    EditText et1;
+    EditText et2;
+    RadioButton rb1;
+    RadioButton rb2;
+    RadioButton rb3;
+    RadioButton rb4;
+    RadioButton rb5;
+    CheckBox cb1;
+    CheckBox cb2;
+    CheckBox cb3;
+    CheckBox cb4;
+    RadioGroup rg1;
+    RadioGroup rg2;
+    RadioGroup rg3;
+    RadioGroup rg4;
+    RadioGroup rg5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        et1 = (EditText) findViewById(R.id.user_name);
+        et2 = (EditText) findViewById(R.id.answer_river);
+        rb1 = (RadioButton) findViewById(R.id.answer_1);
+        rb2 = (RadioButton) findViewById(R.id.answer_2);
+        rb3 = (RadioButton) findViewById(R.id.answer_3);
+        rb4 = (RadioButton) findViewById(R.id.answer_4);
+        rb5 = (RadioButton) findViewById(R.id.answer_5);
+        cb1 = (CheckBox) findViewById(R.id.answer_7a);
+        cb2 = (CheckBox) findViewById(R.id.answer_7b);
+        cb3 = (CheckBox) findViewById(R.id.answer_7c);
+        cb4 = (CheckBox) findViewById(R.id.answer_7d);
+        rg1 = (RadioGroup) findViewById(R.id.rgroup_1);
+        rg2 = (RadioGroup) findViewById(R.id.rgroup_2);
+        rg3 = (RadioGroup) findViewById(R.id.rgroup_3);
+        rg4 = (RadioGroup) findViewById(R.id.rgroup_4);
+        rg5 = (RadioGroup) findViewById(R.id.rgroup_5);
     }
 
     /* This method saves the user's name, defines the right answers and checks the answers */
-        private int calculateScore() {
+    private int calculateScore() {
 
-        EditText fieldName = (EditText) findViewById(R.id.user_name);
-        userName = fieldName.getText().toString();
 
-        RadioButton canberraRadioButton = (RadioButton) findViewById(R.id.canberra_radiobutton);
-        boolean isCanberra = canberraRadioButton.isChecked();
+        userName = et1.getText().toString();
 
-        RadioButton saoPauloRadioButton = (RadioButton) findViewById(R.id.sao_paulo_radiobutton);
-        boolean isSaoPaulo = saoPauloRadioButton.isChecked();
+        boolean isCanberra = rb1.isChecked();
 
-        RadioButton africaRadioButton = (RadioButton) findViewById(R.id.africa_radiobutton);
-        boolean isAfrica = africaRadioButton.isChecked();
+        boolean isSaoPaulo = rb2.isChecked();
 
-        EditText riverName = (EditText) findViewById(R.id.river_name);
-        String isAmazon = riverName.getText().toString();
+        isAmazon = et2.getText().toString();
 
-        RadioButton indiaRadioButton = (RadioButton) findViewById(R.id.india_radiobutton);
-        boolean isIndia = indiaRadioButton.isChecked();
+        boolean isVolga = rb3.isChecked();
 
-        RadioButton volgaRadioButton = (RadioButton) findViewById(R.id.volga_radiobutton);
-        boolean isVolga = volgaRadioButton.isChecked();
+        boolean isAfrica = rb4.isChecked();
 
-        CheckBox spanishCheckBox = (CheckBox) findViewById(R.id.spanish_checkbox);
-        boolean isSpanish = spanishCheckBox.isChecked();
+        boolean isIndia = rb5.isChecked();
 
-        CheckBox englishCheckBox = (CheckBox) findViewById(R.id.english_checkbox);
-        boolean isEnglish = englishCheckBox.isChecked();
+        boolean isSpanish = cb1.isChecked();
 
-        CheckBox hindiUrduCheckBox = (CheckBox) findViewById(R.id.hindi_urdu_checkbox);
-        boolean isHindiUrdu = hindiUrduCheckBox.isChecked();
+        boolean isEnglish = cb2.isChecked();
 
-        CheckBox mandarinCheckBox = (CheckBox) findViewById(R.id.mandarin_checkbox);
-        boolean isMandarin = mandarinCheckBox.isChecked();
+        boolean isMandarin = cb3.isChecked();
+
+        boolean isHindiUrdu = cb4.isChecked();
+
 
         int score = 0;
 
@@ -113,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-    * creates the method to display the toast message with the results
-    */
+     * creates the method to display the toast message with the results
+     */
 
     private void display(int finalResult) {
 
@@ -134,36 +158,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetScore(View v) {
 
-        ((EditText) findViewById(R.id.user_name)).setText("");
+        (et1).setText("");
 
-        ((EditText) findViewById(R.id.river_name)).setText("");
+        (et2).setText("");
 
-        RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.RGroup1);
-        radioGroup1.clearCheck();
+        rg1.clearCheck();
 
-        RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.RGroup2);
-        radioGroup2.clearCheck();
+        rg2.clearCheck();
 
-        RadioGroup radioGroup3 = (RadioGroup) findViewById(R.id.RGroup3);
-        radioGroup3.clearCheck();
+        rg3.clearCheck();
 
-        RadioGroup radioGroup4 = (RadioGroup) findViewById(R.id.RGroup4);
-        radioGroup4.clearCheck();
+        rg4.clearCheck();
 
-        RadioGroup radioGroup5 = (RadioGroup) findViewById(R.id.RGroup5);
-        radioGroup5.clearCheck();
+        rg5.clearCheck();
 
-        CheckBox checkBox = (CheckBox) findViewById(R.id.spanish_checkbox);
-        checkBox.setChecked(false);
+        cb1.setChecked(false);
 
-        CheckBox checkBox1 = (CheckBox) findViewById(R.id.english_checkbox);
-        checkBox1.setChecked(false);
+        cb2.setChecked(false);
 
-        CheckBox checkBox2 = (CheckBox) findViewById(R.id.mandarin_checkbox);
-        checkBox2.setChecked(false);
+        cb3.setChecked(false);
 
-        CheckBox checkBox3 = (CheckBox) findViewById(R.id.hindi_urdu_checkbox);
-        checkBox3.setChecked(false);
+        cb4.setChecked(false);
 
     }
 
