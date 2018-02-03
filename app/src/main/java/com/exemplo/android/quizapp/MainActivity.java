@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         rg3 = (RadioGroup) findViewById(R.id.rgroup_3);
         rg4 = (RadioGroup) findViewById(R.id.rgroup_4);
         rg5 = (RadioGroup) findViewById(R.id.rgroup_5);
+        
     }
 
     /* This method saves the user's name, defines the right answers and checks the answers */
@@ -144,12 +145,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (score >= 6) {
             Toast.makeText(MainActivity.this,
-                    "Congratulations " + userName + "\nYou did great! " + "\nScore: " + score + "/8", Toast.LENGTH_LONG).show();
+                    getString(R.string.congratulations) + userName + "\n" + getString(R.string.did_great) + "\n" + getString(R.string.score_word) + score + getString(R.string.number_8), Toast.LENGTH_LONG).show();
         }
 
         if (score <= 5) {
             Toast.makeText(MainActivity.this,
-                    "You can do better " + userName + "\nTry again " + "\nScore: " + score + "/8", Toast.LENGTH_LONG).show();
+                    getString(R.string.you_can_do_better) + userName + "\n" + getString(R.string.try_again) + "\n" + getString(R.string.score_word) + score + getString(R.string.number_8), Toast.LENGTH_LONG).show();
         }
 
     }

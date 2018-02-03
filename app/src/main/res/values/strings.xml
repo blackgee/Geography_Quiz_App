@@ -31,4 +31,10 @@
     <string name="quiz_result">QUIZ RESULT</string>
     <string name="reset_quiz">Reset quiz</string>
     <string name="sao_paulo">Sao Paulo</string>
+    <string name="you_can_do_better">You can do better:\u0020</string>
+    <string name="try_again">Try again;</string>
+    <string name="score_word">Score:</string>
+    <string name="number_8">/8</string>
+    <string name="congratulations">Congratulations:\u0020</string>
+    <string name="did_great">You did great!</string>
 </resources>
